@@ -28,7 +28,7 @@
       </tr>
     </thead>
 
-    <tbody class="text-center">
+    <tbody class="text-center tbody-height">
       <tr *ngFor="let post of Posts">
         <td>{{ post.fname }}</td>
         <td>{{ post.lname }}</td>
@@ -45,7 +45,11 @@
       </tr>
     </tbody>
   </table>
-
+  <div *ngIf="loading" class="text-center">
+    <div class="spinner-border my-5 mx-auto" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
   <div class="d-flex justify-content-center m-3">
     <a routerLink="/create" class="btn btn-dark" type="button"
       >Add new client</a

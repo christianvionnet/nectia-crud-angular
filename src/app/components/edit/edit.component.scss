@@ -1,0 +1,23 @@
+.btn-update {
+  background-color: #4d98d0;
+  color: #fff;
+  border: 1px solid #4d98d0;
+}
+
+.btn-update:hover {
+  background: transparent;
+  color: #4d98d0;
+  transition-duration: 0.5s ease;
+}
+
+.btn-cancel {
+  background-color: #ba2d35;
+  color: #fff;
+  border: 1px solid #ba2d35;
+}
+
+.btn-cancel:hover {
+  background: transparent;
+  color: #ba2d35;
+  transition-duration: 0.5s ease;
+}

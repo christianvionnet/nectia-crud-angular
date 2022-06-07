@@ -15,6 +15,9 @@ import { EditComponent } from './components/edit/edit.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +32,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AngularFireAuthModule,
     AngularFirestoreModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
