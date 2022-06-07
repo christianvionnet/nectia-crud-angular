@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Post } from 'src/app/post.model';
 import { PostService } from 'src/app/post.service';
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 PostService
 
@@ -16,7 +18,9 @@ export class ShowComponent implements OnInit {
   loading = true
 
   constructor(private postService: PostService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -36,6 +40,15 @@ export class ShowComponent implements OnInit {
     this.toastr.error("Client was deleted", "Success!", {
       positionClass: "toast-bottom-right"
     })
+  }
+
+  onClick() {
+    try {
+      this.authService.logOut()
+      this.router.navigate(["/login"])
+    } catch (error) {
+      console.log(error)
+    }
   }
 
 }
