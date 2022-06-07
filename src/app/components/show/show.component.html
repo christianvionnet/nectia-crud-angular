@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="d-flex justify-content-between m-3">
+    <div>
+      <span>Show </span>
+      <select>
+        <option value="10">10</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select>
+      <span> records</span>
+    </div>
+    <div>
+      <form>
+        <label>Search: </label>
+        <input type="text" />
+      </form>
+    </div>
+  </div>
+
+  <table class="table table-hover table-striped">
+    <thead class="bg-dark text-white text-center">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody class="text-center">
+      <tr *ngFor="let post of Posts">
+        <td>{{ post.fname }}</td>
+        <td>{{ post.lname }}</td>
+        <td>{{ post.email }}</td>
+        <td>{{ post.gender }}</td>
+        <td>
+          <button routerLink="/edit/{{ post.id }}" class="btn btn-edit mx-2">
+            Edit <i class="fa-solid fa-pen"></i>
+          </button>
+          <button (click)="deleteRow(post)" class="btn btn-delete">
+            Delete <i class="fa-solid fa-trash-can"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="d-flex justify-content-center m-3">
+    <a routerLink="/create" class="btn btn-dark" type="button"
+      >Add new client</a
+    >
+  </div>
+</div>
