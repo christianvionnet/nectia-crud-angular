@@ -4,7 +4,12 @@ This project was generated with Angular CLI 14.0.0 and Firebase 9.8.2. The aim o
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Once the project is already cloned, it is necessary to install all the dependencies.
+
+- Open the console and type `npm install`.
+- After that, run `ng serve` for a dev server.
+- Navigate to `http://localhost:4200/`.
+- The application will automatically reload if you change any of the source files.
 
 ## Build
 
