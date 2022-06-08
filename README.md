@@ -1,27 +1,29 @@
 # Nectia CRUD with Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
+This project was generated with Angular CLI 14.0.0 and Firebase 9.8.2. The aim of it is to perform an environment for stuff managing, in this case, clients.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Usage
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- For running the application you have to firstly create a new user by providing an email and a password in the `register tab`.
 
-## Running end-to-end tests
+- Secondly you have log in in the application by entering the credentials created before (`email & password`)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- This is the only way to be able to perfom the `actions` in the applications: `Create`, `Read`, `Update`, `Delete`
 
-## Further help
+- For testing purposes there is a testing account: `osvaldo@gmail.com` | `123456` .
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Comments
+
+Since this application was developed by using Firebase for authentication purposes, it was not possible to return the `Authorization` header with the corresponding `token`.
+
+## License
+
+I [unlicense](https://unlicense.org/) everything in this repository.

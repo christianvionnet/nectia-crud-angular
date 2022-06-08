@@ -12,6 +12,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class LoginComponent implements OnInit {
 
   public loginForm: FormGroup
+  loginError: string = null
 
   constructor(private authService: AuthService,
     private router: Router) {
@@ -30,8 +31,19 @@ export class LoginComponent implements OnInit {
       .then(response => {
         this.router.navigate([""])
       })
-      .catch(error => console.log(error))
+      .catch(error => {
+        if (error.code === "auth/wrong-password") {
+          this.loginError = "Wrong password"
+        }
+        if (error.code === "auth/user-not-found") {
+          this.loginError = "Wrong email"
+        }
+        if (error.code === "auth/too-many-requests") {
+          this.loginError = "Access temporarily disabled. Too many failed login attempts"
+        }
+      })
   }
+
 
   onClickGoogle() {
     try {

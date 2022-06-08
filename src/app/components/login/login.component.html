@@ -2,9 +2,10 @@
   <form
     [formGroup]="loginForm"
     (ngSubmit)="onSubmit()"
-    class="container border rounded col-6 py-5 px-4"
+    class="container border rounded col-sm-6 col-lg-3 py-5 px-4"
   >
     <h4 class="text-center mb-4">Log in</h4>
+    <p *ngIf="loginError" class="alert alert-danger py-2">{{ loginError }}</p>
     <div class="form-outline mb-4">
       <label class="form-label">Email address</label>
       <input

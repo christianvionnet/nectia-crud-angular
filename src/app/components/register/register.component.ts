@@ -12,6 +12,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class RegisterComponent implements OnInit {
 
   public registerForm: FormGroup
+  registerError: string = null
 
   constructor(private authService: AuthService,
     private router: Router) {
@@ -31,11 +32,11 @@ export class RegisterComponent implements OnInit {
         console.log(response)
         this.router.navigate(["/login"])
       })
-      .catch(error => console.log(error))
-    // try {
-    // } catch (error) {
-    //   console.log(error)
-    // }
+      .catch(error => {
+        if (error.code === "auth/email-already-in-use") {
+          this.registerError = "Email already in use"
+        }
+      })
   }
 
 }
